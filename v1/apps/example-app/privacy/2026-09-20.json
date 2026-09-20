@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "document_type": "app-privacy",
+  "document_version": "2026-09-20",
+  "effective_date": "2026-09-20",
+  "last_updated": "2026-09-20",
+  "jurisdiction_scope": [
+    "Canada",
+    "United States",
+    "European Union",
+    "European Economic Area",
+    "United Kingdom",
+    "Nigeria"
+  ],
+  "operator": {
+    "legal_name": "ROO Secure IT Solutions",
+    "website": "https://www.roosecure.com",
+    "contact_email": "privacy@roosecure.com"
+  },
+  "application": {
+    "application_id": "example-app",
+    "display_name": "Example App",
+    "status": "TEMPLATE"
+  },
+  "title": "Example App — Application Privacy Notice",
+  "summary": "Application-specific supplement to the ROO Secure Master Privacy Policy.",
+  "sections": [
+    {
+      "id": "operator",
+      "heading": "1. Application Operator",
+      "body": "Replace this section with the exact legal entity that operates this application and state whether it acts as controller, joint controller or processor for each relevant processing activity."
+    },
+    {
+      "id": "data",
+      "heading": "2. Application Data",
+      "body": "Replace this section with the exact categories collected by the application, including account data, device data, diagnostics, photos/files, location, contacts, analytics, crash logs and security telemetry as applicable."
+    },
+    {
+      "id": "vendors",
+      "heading": "3. Third-Party Services",
+      "body": "List every material SDK, analytics provider, crash-reporting provider, payment processor, CAPTCHA provider, advertising/remarketing provider, hosting provider and other processor actually used by the application."
+    },
+    {
+      "id": "retention",
+      "heading": "4. Retention",
+      "body": "Insert actual retention periods or documented criteria for each material category."
+    },
+    {
+      "id": "rights",
+      "heading": "5. Rights and Requests",
+      "body": "Requests can be directed to privacy@roosecure.com unless the application has a different designated privacy contact."
+    },
+    {
+      "id": "changes",
+      "heading": "6. Relationship to Master Policy",
+      "body": "This notice supplements the ROO Secure Master Privacy Policy. If there is a conflict, the application-specific notice controls only to the extent necessary to accurately describe that application's processing, subject to the applicable legal agreement."
+    }
+  ],
+  "contact": {
+    "privacy_email": "privacy@roosecure.com",
+    "general_email": "info@roosecure.com",
+    "website": "https://www.roosecure.com"
+  },
+  "legal_review_required": true
+}

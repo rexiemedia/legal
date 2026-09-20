@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "document_type": "privacy",
+  "document_version": "2026-09-20",
+  "effective_date": "2026-09-20",
+  "last_updated": "2026-09-20",
+  "jurisdiction_scope": [
+    "Canada",
+    "United States",
+    "European Union",
+    "European Economic Area",
+    "United Kingdom",
+    "Nigeria"
+  ],
+  "operator": {
+    "legal_name": "ROO Secure IT Solutions",
+    "website": "https://www.roosecure.com",
+    "contact_email": "privacy@roosecure.com"
+  },
+  "application": null,
+  "title": "ROO Secure IT Solutions — Master Privacy Policy",
+  "summary": "Master privacy notice for ROO Secure websites, applications and services; application-specific notices supplement this document.",
+  "sections": [
+    {
+      "id": "overview",
+      "heading": "1. Scope",
+      "body": "This Privacy Policy describes how ROO Secure IT Solutions may collect, use, disclose, retain and protect personal information when you use our websites, mobile applications, software products, client portals, support services and related services. Individual applications may provide additional notices where their data practices differ."
+    },
+    {
+      "id": "data",
+      "heading": "2. Information We May Collect",
+      "body": "Depending on the service, information may include account and contact details, authentication information, billing and transaction information, support communications, device and application information, diagnostic and crash information, approximate location where enabled, photographs or files that you choose to upload, security telemetry, and usage or analytics information."
+    },
+    {
+      "id": "payments",
+      "heading": "3. Payments",
+      "body": "Where products or services can be purchased, payment transactions may be processed by third-party payment providers. ROO Secure should not receive or store full payment-card credentials unless expressly stated in an application-specific notice. Transaction records may be retained for accounting, fraud prevention, tax, dispute handling and legal obligations."
+    },
+    {
+      "id": "analytics",
+      "heading": "4. Analytics and Crash Reporting",
+      "body": "We may use analytics and crash-reporting technologies to understand service usage, diagnose failures, improve reliability and security, and measure product performance. The actual vendors, identifiers, retention periods and opt-out mechanisms must be documented for each application before publication."
+    },
+    {
+      "id": "remarketing",
+      "heading": "5. Advertising and Remarketing",
+      "body": "Where enabled, ROO Secure may use advertising or remarketing technologies to promote its products and services. Depending on the jurisdiction, non-essential advertising technologies may require consent or provide opt-out rights. Application-specific notices should identify the vendors and technologies actually used."
+    },
+    {
+      "id": "captcha",
+      "heading": "6. Invisible reCAPTCHA",
+      "body": "Some forms may use invisible or risk-analysis CAPTCHA technology to reduce automated abuse, spam and fraud. Such technology may process technical information and may be subject to the provider's own privacy terms. The exact provider and configuration should be identified in the applicable application notice."
+    },
+    {
+      "id": "gdpr",
+      "heading": "7. GDPR and UK GDPR",
+      "body": "Where applicable, ROO Secure processes personal data in accordance with applicable data-protection law, including requirements concerning lawful processing, transparency, purpose limitation, data minimisation, storage limitation, security and accountability. Depending on the processing, legal bases may include contract, legal obligation, legitimate interests, consent, or another basis permitted by law."
+    },
+    {
+      "id": "rights",
+      "heading": "8. Privacy Rights",
+      "body": "Depending on location and applicable law, individuals may have rights to access, correct, delete, restrict or object to certain processing, receive or transfer certain data, withdraw consent where processing relies on consent, and lodge a complaint with a competent regulator. Requests may be sent to privacy@roosecure.com. Identity verification may be required."
+    },
+    {
+      "id": "california",
+      "heading": "9. California Privacy Rights",
+      "body": "For California residents, applicable California privacy laws may provide rights concerning categories of personal information collected, purposes, disclosures, sale or sharing, access, correction, deletion, limitation of certain sensitive-information uses, and opting out of certain targeted advertising or sale/sharing activities. The actual applicability and scope depend on the business and processing activities at issue."
+    },
+    {
+      "id": "caloppa",
+      "heading": "10. CalOPPA",
+      "body": "Where applicable to an online service directed to or used by California residents, this notice describes categories of personally identifiable information collected, how such information may be used or shared, and how users may review or request changes to certain information."
+    },
+    {
+      "id": "sharing",
+      "heading": "11. Service Providers and Disclosures",
+      "body": "Information may be disclosed to hosting providers, cloud infrastructure providers, analytics and diagnostics providers, payment processors, security providers, communications providers, professional advisers, authorities where legally required, and other processors or service providers necessary to operate the relevant service. Application-specific notices should identify material vendors."
+    },
+    {
+      "id": "transfers",
+      "heading": "12. International Transfers",
+      "body": "Personal information may be processed in countries other than the country in which it was collected. Where required, appropriate safeguards and transfer mechanisms should be used. The actual locations and mechanisms should be documented for each service."
+    },
+    {
+      "id": "retention",
+      "heading": "13. Retention",
+      "body": "Personal information should be retained only for as long as necessary for the stated purpose, contractual needs, security, accounting, dispute resolution and legal obligations. Exact retention periods vary by data category and application and should be documented in the applicable records of processing and application notice."
+    },
+    {
+      "id": "security",
+      "heading": "14. Security",
+      "body": "ROO Secure uses technical and organisational safeguards appropriate to the nature and risk of the information. No internet transmission or storage system can be guaranteed completely secure. Security controls should include access control, encryption where appropriate, logging, vulnerability management, backup and recovery, and incident response."
+    },
+    {
+      "id": "children",
+      "heading": "15. Children's Privacy",
+      "body": "Services are not intended to collect children's personal information contrary to applicable law. If an application is directed to children or is likely to be used by children, it requires a dedicated child-privacy review and application-specific notice before launch."
+    },
+    {
+      "id": "changes",
+      "heading": "16. Changes",
+      "body": "This policy may be updated when services, vendors, legal requirements or processing activities change. The version and effective date are published with this document. Material changes should be communicated through appropriate channels."
+    }
+  ],
+  "contact": {
+    "privacy_email": "privacy@roosecure.com",
+    "general_email": "info@roosecure.com",
+    "website": "https://www.roosecure.com"
+  },
+  "legal_review_required": true
+}

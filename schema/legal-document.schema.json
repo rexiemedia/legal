@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://legal.roosecure.com/schema/legal-document.schema.json",
+  "title": "ROO Secure Legal Document",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "document_type",
+    "document_version",
+    "effective_date",
+    "jurisdiction_scope",
+    "operator",
+    "title",
+    "sections"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "privacy",
+        "terms",
+        "cookies",
+        "data-compliance",
+        "refunds",
+        "app-privacy",
+        "app-terms"
+      ]
+    },
+    "document_version": {
+      "type": "string"
+    },
+    "effective_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "jurisdiction_scope": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "operator": {
+      "type": "object",
+      "required": [
+        "legal_name",
+        "website",
+        "contact_email"
+      ],
+      "properties": {
+        "legal_name": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string",
+          "format": "uri"
+        },
+        "contact_email": {
+          "type": "string",
+          "format": "email"
+        }
+      }
+    },
+    "application": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "heading",
+          "body"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "privacy_email": {
+          "type": "string"
+        },
+        "general_email": {
+          "type": "string"
+        },
+        "website": {
+          "type": "string"
+        }
+      }
+    },
+    "legal_review_required": {
+      "type": "boolean"
+    }
+  }
+}

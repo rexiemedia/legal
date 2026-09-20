@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "document_type": "refunds",
+  "document_version": "2026-09-20",
+  "effective_date": "2026-09-20",
+  "last_updated": "2026-09-20",
+  "jurisdiction_scope": [
+    "Canada",
+    "United States",
+    "European Union",
+    "European Economic Area",
+    "United Kingdom",
+    "Nigeria"
+  ],
+  "operator": {
+    "legal_name": "ROO Secure IT Solutions",
+    "website": "https://www.roosecure.com",
+    "contact_email": "privacy@roosecure.com"
+  },
+  "application": null,
+  "title": "ROO Secure IT Solutions — Refund Policy",
+  "summary": "General refund-policy template for products and services.",
+  "sections": [
+    {
+      "id": "scope",
+      "heading": "1. Scope",
+      "body": "This is a general refund-policy template. The final policy must reflect the product type, customer jurisdiction, payment provider, contract terms and mandatory consumer rights."
+    },
+    {
+      "id": "digital",
+      "heading": "2. Digital Products and Services",
+      "body": "Eligibility for refunds may depend on whether a digital product has been accessed, delivered or materially used and on applicable consumer law."
+    },
+    {
+      "id": "subscriptions",
+      "heading": "3. Subscriptions",
+      "body": "Subscription cancellation and refund rules should be stated at purchase, including renewal timing and any statutory cancellation rights."
+    },
+    {
+      "id": "services",
+      "heading": "4. Consulting and Professional Services",
+      "body": "Deposits, scheduled work, completed milestones and custom services may be subject to separate contractual terms."
+    },
+    {
+      "id": "requests",
+      "heading": "5. Requests",
+      "body": "Refund requests may be submitted to info@roosecure.com with the order identifier and relevant details. Identity or purchase verification may be required."
+    },
+    {
+      "id": "law",
+      "heading": "6. Mandatory Rights",
+      "body": "Nothing in this policy is intended to remove or restrict non-waivable consumer rights."
+    }
+  ],
+  "contact": {
+    "privacy_email": "privacy@roosecure.com",
+    "general_email": "info@roosecure.com",
+    "website": "https://www.roosecure.com"
+  },
+  "legal_review_required": true
+}

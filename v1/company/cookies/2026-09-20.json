@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0",
+  "document_type": "cookies",
+  "document_version": "2026-09-20",
+  "effective_date": "2026-09-20",
+  "last_updated": "2026-09-20",
+  "jurisdiction_scope": [
+    "Canada",
+    "United States",
+    "European Union",
+    "European Economic Area",
+    "United Kingdom",
+    "Nigeria"
+  ],
+  "operator": {
+    "legal_name": "ROO Secure IT Solutions",
+    "website": "https://www.roosecure.com",
+    "contact_email": "privacy@roosecure.com"
+  },
+  "application": null,
+  "title": "ROO Secure IT Solutions — Cookie & Tracking Policy",
+  "summary": "Description of cookies and similar technologies used by ROO Secure services.",
+  "sections": [
+    {
+      "id": "what",
+      "heading": "1. What Are Cookies and Similar Technologies?",
+      "body": "Cookies, SDKs, local storage, pixels and similar technologies may store or access information on a device. They can support authentication, security, preferences, analytics and advertising."
+    },
+    {
+      "id": "categories",
+      "heading": "2. Categories",
+      "body": "Strictly necessary technologies may be required for core functionality and security. Preference, analytics and advertising technologies should be enabled only according to the applicable consent and privacy requirements."
+    },
+    {
+      "id": "analytics",
+      "heading": "3. Analytics",
+      "body": "Analytics technologies may collect technical and usage information such as device characteristics, pages or screens viewed, events and diagnostic information. Actual vendors must be listed in the application-specific notice."
+    },
+    {
+      "id": "remarketing",
+      "heading": "4. Advertising and Remarketing",
+      "body": "Remarketing technologies may allow ROO Secure or advertising partners to measure campaigns and show relevant advertisements. Where required, consent or an opt-out mechanism must be provided."
+    },
+    {
+      "id": "choices",
+      "heading": "5. Your Choices",
+      "body": "Users may be offered a cookie-consent interface, browser controls, device-level controls or vendor opt-out mechanisms depending on the technology and jurisdiction."
+    },
+    {
+      "id": "updates",
+      "heading": "6. Updates",
+      "body": "The technology inventory should be reviewed whenever analytics, advertising, authentication, payment or embedded third-party services change."
+    }
+  ],
+  "contact": {
+    "privacy_email": "privacy@roosecure.com",
+    "general_email": "info@roosecure.com",
+    "website": "https://www.roosecure.com"
+  },
+  "legal_review_required": true
+}

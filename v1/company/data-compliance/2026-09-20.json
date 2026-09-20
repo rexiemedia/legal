@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "document_type": "data-compliance",
+  "document_version": "2026-09-20",
+  "effective_date": "2026-09-20",
+  "last_updated": "2026-09-20",
+  "jurisdiction_scope": [
+    "Canada",
+    "United States",
+    "European Union",
+    "European Economic Area",
+    "United Kingdom",
+    "Nigeria"
+  ],
+  "operator": {
+    "legal_name": "ROO Secure IT Solutions",
+    "website": "https://www.roosecure.com",
+    "contact_email": "privacy@roosecure.com"
+  },
+  "application": null,
+  "title": "ROO Secure IT Solutions — Data & Compliance Framework",
+  "summary": "Operational privacy and compliance framework for ROO Secure applications and services.",
+  "sections": [
+    {
+      "id": "frameworks",
+      "heading": "1. Compliance Frameworks",
+      "body": "This document describes the compliance framework used to organise privacy and data-protection obligations. It is not a certification or legal opinion."
+    },
+    {
+      "id": "gdpr",
+      "heading": "2. GDPR / UK GDPR",
+      "body": "Where applicable, the organisation should maintain records of processing, identify controller/processor roles, document lawful bases, provide transparent notices, manage data-subject requests, assess international transfers, and maintain appropriate security measures."
+    },
+    {
+      "id": "california",
+      "heading": "3. CCPA / CPRA",
+      "body": "Where applicable, maintain an inventory of California personal information, purposes, sources, disclosures, retention, rights processes, opt-out mechanisms and contracts with service providers/contractors as required."
+    },
+    {
+      "id": "caloppa",
+      "heading": "4. CalOPPA",
+      "body": "For covered online services, maintain an accessible privacy policy describing relevant information practices and update it as required."
+    },
+    {
+      "id": "governance",
+      "heading": "5. Governance",
+      "body": "Maintain a data inventory, vendor register, records of processing, retention schedule, incident-response process, privacy-request process and change-management process."
+    },
+    {
+      "id": "security",
+      "heading": "6. Security Controls",
+      "body": "Security controls should be risk-based and appropriate to the information processed, including access management, encryption, logging, vulnerability management, backups, monitoring and incident response."
+    },
+    {
+      "id": "review",
+      "heading": "7. Review",
+      "body": "This document must be reviewed when a new application, vendor, tracking technology, payment flow, data category, jurisdiction or processing purpose is introduced."
+    }
+  ],
+  "contact": {
+    "privacy_email": "privacy@roosecure.com",
+    "general_email": "info@roosecure.com",
+    "website": "https://www.roosecure.com"
+  },
+  "legal_review_required": true
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0",
+  "document_type": "app-terms",
+  "document_version": "2026-09-20",
+  "effective_date": "2026-09-20",
+  "last_updated": "2026-09-20",
+  "jurisdiction_scope": [
+    "Canada",
+    "United States",
+    "European Union",
+    "European Economic Area",
+    "United Kingdom",
+    "Nigeria"
+  ],
+  "operator": {
+    "legal_name": "ROO Secure IT Solutions",
+    "website": "https://www.roosecure.com",
+    "contact_email": "privacy@roosecure.com"
+  },
+  "application": {
+    "application_id": "example-app",
+    "display_name": "Example App",
+    "status": "TEMPLATE"
+  },
+  "title": "Example App — Application Terms",
+  "summary": "Application-specific terms supplementing the ROO Secure Terms of Service.",
+  "sections": [
+    {
+      "id": "scope",
+      "heading": "1. Scope",
+      "body": "Replace with the exact application functionality and permitted uses."
+    },
+    {
+      "id": "account",
+      "heading": "2. Accounts",
+      "body": "Describe account requirements, authentication and user responsibilities."
+    },
+    {
+      "id": "content",
+      "heading": "3. User Content",
+      "body": "Describe ownership, licences and handling of uploaded content."
+    },
+    {
+      "id": "acceptable",
+      "heading": "4. Acceptable Use",
+      "body": "Define prohibited uses relevant to this application."
+    },
+    {
+      "id": "relationship",
+      "heading": "5. Relationship to Master Terms",
+      "body": "These terms supplement the ROO Secure Terms of Service."
+    }
+  ],
+  "contact": {
+    "privacy_email": "privacy@roosecure.com",
+    "general_email": "info@roosecure.com",
+    "website": "https://www.roosecure.com"
+  },
+  "legal_review_required": true
+}

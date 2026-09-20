@@ -1,0 +1,13 @@
+# Suggested response headers for the static legal service.
+# Adjust to your CDN/object-storage provider and deployment.
+
+Strict-Transport-Security: max-age=63072000; includeSubDomains
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+X-Frame-Options: DENY
+
+# HTML:
+Content-Security-Policy: default-src 'none'; style-src 'self'; base-uri 'none'; frame-ancestors 'none'
+
+# JSON:
+Content-Type: application/json; charset=utf-8

@@ -1,0 +1,46 @@
+{
+  "manifest_version": "1.0",
+  "service": "roo-secure-legal",
+  "publisher": "ROO Secure IT Solutions",
+  "generated": "2026-09-20",
+  "base_url": "https://legal.roosecure.com",
+  "company_documents": {
+    "privacy": {
+      "version": "2026-09-20",
+      "path": "/v1/company/privacy/2026-09-20.json"
+    },
+    "terms": {
+      "version": "2026-09-20",
+      "path": "/v1/company/terms/2026-09-20.json"
+    },
+    "cookies": {
+      "version": "2026-09-20",
+      "path": "/v1/company/cookies/2026-09-20.json"
+    },
+    "data-compliance": {
+      "version": "2026-09-20",
+      "path": "/v1/company/data-compliance/2026-09-20.json"
+    },
+    "refunds": {
+      "version": "2026-09-20",
+      "path": "/v1/company/refunds/2026-09-20.json"
+    }
+  },
+  "applications": {
+    "example-app": {
+      "status": "TEMPLATE",
+      "privacy": {
+        "version": "2026-09-20",
+        "path": "/v1/apps/example-app/privacy/2026-09-20.json"
+      },
+      "terms": {
+        "version": "2026-09-20",
+        "path": "/v1/apps/example-app/terms/2026-09-20.json"
+      }
+    }
+  },
+  "integrity": {
+    "algorithm": "SHA-256",
+    "note": "Populate hashes after final publication. Do not treat an unsigned manifest as cryptographic proof of authenticity."
+  }
+}

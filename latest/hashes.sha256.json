@@ -1,0 +1,13 @@
+{
+  "algorithm": "SHA-256",
+  "generated": "2026-09-20",
+  "files": {
+    "v1/apps/example-app/privacy/2026-09-20.json": "96c24f2e5a209df086e16d00c4614cbc70ffccd65f93890ee081122dcb026e57",
+    "v1/apps/example-app/terms/2026-09-20.json": "072e9edfb48aafc00034f66e624775647c6cffb07c701556029bef7e41f46a07",
+    "v1/company/cookies/2026-09-20.json": "20e1d831a2df400657cb1f1ade3618f26dd87edf70ca3a9296c95b89a038075a",
+    "v1/company/privacy/2026-09-20.json": "d77c372ed1ad4645b8adee3bd7448acd5f0fa34f8166e4800b7735ccb0ee08c5",
+    "v1/company/terms/2026-09-20.json": "d052c22e3eaf92829f336e272a9574be81cef6f18819e3b57111d29949b6c3c1",
+    "v1/company/data-compliance/2026-09-20.json": "7924fbf2b6cbcb6f9211f375d6c8a589642463b2d3db4a5f268113a0a22c76af",
+    "v1/company/refunds/2026-09-20.json": "b05dc29dcd99187c6038b63e4962a85c589f7c1cb3124d98c4210fd6a02a9099"
+  }
+}
