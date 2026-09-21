@@ -1,0 +1,14 @@
+services:
+  legal:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Optional: limit resources on Railway / local
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M

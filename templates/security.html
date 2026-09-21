@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Security – {{ product }}{% endblock %}
+
+{% block content %}
+    <h1>Security</h1>
+    <div class="meta">
+      <strong>Product:</strong> {{ product }} &nbsp;·&nbsp;
+      <strong>Effective:</strong> {{ effective }} &nbsp;·&nbsp;
+      <strong>Version:</strong> {{ version }}
+    </div>
+
+    <p>
+      This page describes the security practices and principles that apply to
+      <strong>{{ product }}</strong> (including the application or service identified as
+      <strong>{{ app }}</strong>) operated by <strong>{{ company }}</strong>.
+    </p>
+
+    <h2>1. Our Approach</h2>
+    <p>
+      Security is foundational to everything we do. We combine offensive security thinking
+      with practical engineering controls. All testing and assessment work is performed
+      only under explicit written authorisation and defined scope.
+    </p>
+
+    <h2>2. Authorised Testing Only</h2>
+    <ul>
+      <li>We never perform unsolicited or unscoped scanning or testing.</li>
+      <li>Every engagement begins with clear rules of engagement and target definitions.</li>
+      <li>Findings are human-validated before they are reported.</li>
+    </ul>
+
+    <h2>3. Data Protection</h2>
+    <ul>
+      <li>Client data and assessment findings are treated as confidential.</li>
+      <li>Access is limited to personnel with a need to know.</li>
+      <li>Data is encrypted in transit (TLS) and protected at rest using industry-standard controls.</li>
+      <li>We retain engagement data only as long as required by the contract or applicable law.</li>
+    </ul>
+
+    <h2>4. Infrastructure & Application Security</h2>
+    <ul>
+      <li>Systems hosting {{ product }} are hardened and monitored.</li>
+      <li>We apply least-privilege access, regular patching, and secure configuration baselines.</li>
+      <li>Secrets and credentials are managed through controlled mechanisms and never hard-coded.</li>
+    </ul>
+
+    <h2>5. Use of Automation and AI</h2>
+    <p>
+      Automation and AI may assist with analysis, triage, and reporting.
+      All security-relevant decisions that affect risk remain under human oversight
+      and are subject to explicit scope and authorisation.
+    </p>
+
+    <h2>6. Vulnerability Reporting</h2>
+    <p>
+      If you believe you have discovered a security vulnerability in {{ product }}
+      or related systems, please report it responsibly to
+      <a href="mailto:{{ email }}">{{ email }}</a>.
+      We ask that you:
+    </p>
+    <ul>
+      <li>Provide sufficient detail to reproduce the issue.</li>
+      <li>Allow us reasonable time to investigate and remediate before public disclosure.</li>
+      <li>Avoid accessing or modifying data that does not belong to you.</li>
+    </ul>
+    <p>
+      We will acknowledge receipt and work with you in good faith.
+    </p>
+
+    <h2>7. Third-Party Dependencies</h2>
+    <p>
+      We monitor and manage third-party components and cloud services used by
+      {{ product }}. We expect our providers to maintain appropriate security standards.
+    </p>
+
+    <h2>8. Continuous Improvement</h2>
+    <p>
+      Security is an ongoing process. We regularly review controls, learn from
+      engagements, and improve our practices. Frameworks such as NIST CSF, OWASP,
+      and CIS Controls inform our approach where relevant.
+    </p>
+
+    <h2>9. Contact</h2>
+    <p>
+      For security-related questions or to report a vulnerability:<br>
+      <strong>{{ company }}</strong><br>
+      Email: <a href="mailto:{{ email }}">{{ email }}</a>
+    </p>
+
+    {% endblock %}
