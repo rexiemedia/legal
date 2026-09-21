@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 
 {% block title %}Privacy Policy – {{ product }}{% endblock %}
+{% block heading %}Privacy Policy{% endblock %}
+{% block lede %}How {{ company }} collects, uses, and protects personal information.{% endblock %}
+
+{% block toc %}
+  <li><a href="#collect">1. Information we collect</a></li>
+  <li><a href="#use">2. How we use information</a></li>
+  <li><a href="#legal-bases">3. Legal bases</a></li>
+  <li><a href="#sharing">4. Data sharing</a></li>
+  <li><a href="#retention">5. Data retention</a></li>
+  <li><a href="#security">6. Security</a></li>
+  <li><a href="#rights">7. Your rights</a></li>
+  <li><a href="#transfers">8. International transfers</a></li>
+  <li><a href="#changes">9. Changes to this policy</a></li>
+  <li><a href="#contact">10. Contact</a></li>
+{% endblock %}
 
 {% block content %}
-    <h1>Privacy Policy</h1>
-    <div class="meta">
-      <strong>Product:</strong> {{ product }} &nbsp;·&nbsp;
-      <strong>Effective:</strong> {{ effective }} &nbsp;·&nbsp;
-      <strong>Version:</strong> {{ version }}
-    </div>
-
     <p>
       This Privacy Policy explains how <strong>{{ company }}</strong> (“we”, “us”, or “our”)
       collects, uses, stores, and protects information when you use
@@ -17,7 +25,7 @@
       <strong>{{ app }}</strong>).
     </p>
 
-    <h2>1. Information We Collect</h2>
+    <h2 id="collect">1. Information we collect</h2>
     <p>We may collect the following categories of information:</p>
     <ul>
       <li><strong>Contact information</strong> you voluntarily provide (name, email address, company name) when you submit a form or request support.</li>
@@ -26,7 +34,7 @@
     </ul>
     <p>We do not sell personal data.</p>
 
-    <h2>2. How We Use Information</h2>
+    <h2 id="use">2. How we use information</h2>
     <ul>
       <li>To provide, operate, and improve {{ product }}.</li>
       <li>To respond to inquiries, schedule engagements, and deliver reports.</li>
@@ -34,14 +42,14 @@
       <li>To comply with legal obligations and enforce our agreements.</li>
     </ul>
 
-    <h2>3. Legal Bases (where applicable)</h2>
+    <h2 id="legal-bases">3. Legal bases (where applicable)</h2>
     <p>
       Where required by law (including the GDPR), we process personal data on the basis of
       contract performance, legitimate interests (security and service improvement),
       or consent where you have given it.
     </p>
 
-    <h2>4. Data Sharing</h2>
+    <h2 id="sharing">4. Data sharing</h2>
     <p>
       We share personal data only with service providers who assist us in operating
       {{ product }} (for example, email delivery or infrastructure providers), under
@@ -49,21 +57,21 @@
       by law or to protect rights, safety, or security.
     </p>
 
-    <h2>5. Data Retention</h2>
+    <h2 id="retention">5. Data retention</h2>
     <p>
       We retain personal data only for as long as necessary to fulfil the purposes
       described in this policy, to meet legal or contractual requirements, or to resolve disputes.
       Assessment-related records are retained according to the terms of the relevant engagement.
     </p>
 
-    <h2>6. Security</h2>
+    <h2 id="security">6. Security</h2>
     <p>
       We apply appropriate technical and organisational measures to protect personal data
       against unauthorised access, alteration, disclosure, or destruction. No method of
       transmission or storage is completely secure; we continuously improve our controls.
     </p>
 
-    <h2>7. Your Rights</h2>
+    <h2 id="rights">7. Your rights</h2>
     <p>
       Depending on your location, you may have the right to access, correct, delete,
       restrict, or object to the processing of your personal data, and to data portability.
@@ -71,23 +79,23 @@
       <a href="mailto:{{ email }}">{{ email }}</a>.
     </p>
 
-    <h2>8. International Transfers</h2>
+    <h2 id="transfers">8. International transfers</h2>
     <p>
       If personal data is transferred outside your country, we use appropriate safeguards
       (such as standard contractual clauses) where required by applicable law.
     </p>
 
-    <h2>9. Changes to This Policy</h2>
+    <h2 id="changes">9. Changes to this policy</h2>
     <p>
       We may update this Privacy Policy from time to time. The “Effective” date and version
       at the top of this page will be revised when changes are made. Continued use of
       {{ product }} after changes constitutes acceptance of the updated policy.
     </p>
 
-    <h2>10. Contact</h2>
+    <h2 id="contact">10. Contact</h2>
     <p>
       For privacy-related questions or requests, please contact:<br>
       <strong>{{ company }}</strong><br>
       Email: <a href="mailto:{{ email }}">{{ email }}</a>
     </p>
-    {% endblock %}
+{% endblock %}

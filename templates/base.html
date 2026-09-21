@@ -2,52 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
   <title>{% block title %}{{ product }}{% endblock %}</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <style>
-    :root {
-      --bg: {{ theme.bg }};
-      --card: {{ theme.card }};
-      --text: {{ theme.text }};
-      --muted: {{ theme.muted }};
-      --accent: {{ theme.accent }};
-      --border: {{ theme.border }};
-    }
-  </style>
+  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
+   <link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='style.css',
+      bg=request.args.get('bg', ''),
+      card=request.args.get('card', ''),
+      text=request.args.get('text', ''),
+      muted=request.args.get('muted', ''),
+      accent=request.args.get('accent', ''),
+      border=request.args.get('border', '')
+  ) }}"
+>
+  <script src="{{ url_for('static', filename='toc.js') }}" defer></script>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-inner">
-      <a href="{{ url_for('privacy') }}" class="nav-brand">{{ company }}</a>
-      <div class="nav-links">
-        <a href="{{ url_for('privacy') }}" class="{% if request.endpoint == 'privacy' %}active{% endif %}">Privacy</a>
-        <a href="{{ url_for('terms') }}" class="{% if request.endpoint == 'terms' %}active{% endif %}">Terms</a>
-        <a href="{{ url_for('security') }}" class="{% if request.endpoint == 'security' %}active{% endif %}">Security</a>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a href="{{ url_for('privacy') }}" class="brand">{{ company }}</a>
+      <nav class="site-nav" aria-label="Legal pages">
+        <a href="{{ url_for('privacy') }}"{% if request.endpoint == 'privacy' %} aria-current="page"{% endif %}>Privacy</a>
+        <a href="{{ url_for('terms') }}"{% if request.endpoint == 'terms' %} aria-current="page"{% endif %}>Terms</a>
+        <a href="{{ url_for('security') }}"{% if request.endpoint == 'security' %} aria-current="page"{% endif %}>Security</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+  {% block main %}
+    <div class="wrap">
+      <header class="doc-head">
+        <h1>{% block heading %}{% endblock %}</h1>
+        <p class="lede">{% block lede %}{% endblock %}</p>
+        <dl class="control">
+          <div><dt>Product</dt><dd>{{ product }}</dd></div>
+          <div><dt>Effective</dt><dd><time datetime="{{ effective }}">{{ effective_display }}</time></dd></div>
+          <div><dt>Version</dt><dd>{{ version }}</dd></div>
+          <div><dt>Contact</dt><dd><a href="mailto:{{ email }}">{{ email }}</a></dd></div>
+        </dl>
+      </header>
+
+      <div class="doc-body">
+        <details class="toc" open>
+          <summary>On this page</summary>
+          <ol>{% block toc %}{% endblock %}</ol>
+        </details>
+        <article class="doc">
+          {% block content %}{% endblock %}
+        </article>
       </div>
     </div>
-  </nav>
-
-  <!-- Main content -->
-  <main class="container">
-    {% block content %}{% endblock %}
+  {% endblock %}
   </main>
 
-  <!-- Footer -->
-  <footer class="footer-bar">
-    <div class="footer-inner">
-      <div>
-        © {{ effective[:4] }} {{ company }}. All rights reserved.
-      </div>
-      <div class="footer-links">
-        <a href="{{ url_for('privacy') }}">Privacy Policy</a>
-        <a href="{{ url_for('terms') }}">Terms of Use</a>
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>© {{ year }} {{ company }}. All rights reserved.</div>
+      <nav aria-label="Footer">
+        <a href="{{ url_for('privacy') }}">Privacy policy</a>
+        <a href="{{ url_for('terms') }}">Terms of use</a>
         <a href="{{ url_for('security') }}">Security</a>
-      </div>
-      <div class="footer-meta">
-        {{ product }} ({{ app }}) · v{{ version }}
-      </div>
+      </nav>
     </div>
   </footer>
 </body>

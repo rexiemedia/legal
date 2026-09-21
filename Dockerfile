@@ -18,4 +18,5 @@ COPY --chown=appuser:appuser . .
 USER appuser
 EXPOSE 8080
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "--threads", "2", "--timeout", "30", "app:app"]
+# Railway injects $PORT; fall back to 8080 locally / in docker-compose.
+CMD gunicorn --bind 0.0.0.0:${PORT:-8080} --workers 2 --threads 2 --timeout 30 --access-logfile - app:app

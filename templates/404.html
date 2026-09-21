@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Page not found – {{ product }}{% endblock %}
+{% block main %}
+  <div class="wrap notfound">
+    <h1>Page not found</h1>
+    <p>That page doesn't exist. Try the <a href="{{ url_for('privacy') }}">privacy policy</a>, <a href="{{ url_for('terms') }}">terms of use</a>, or <a href="{{ url_for('security') }}">security page</a>.</p>
+  </div>
+{% endblock %}
