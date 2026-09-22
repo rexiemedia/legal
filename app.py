@@ -78,23 +78,75 @@ SITE = {
 MAX_PRODUCT_LENGTH = 120
 MAX_APP_LENGTH = 120
 
+# Allowlist: letters, numbers, spaces, and a small set of punctuation normal
+# product/company/app names actually use. Anything outside this — <, >, {, },
+# ;, backticks, quotes, "javascript:", "eval(", "onerror=", etc. — is rejected
+# outright rather than escaped-and-shown. This is defense in depth, not a fix
+# for an exploit: Jinja autoescaping already prevents execution. The point is
+# that a cybersecurity company's own pages shouldn't reflect attack-looking
+# strings back to the visitor at all, even harmlessly.
+SAFE_TEXT_RE = re.compile(r"^[A-Za-z0-9 .,&'()/_-]+$")
+
+# Some attack-shaped strings ("eval(...)", "script") pass the character
+# allowlist above but are still worth rejecting outright rather than
+# displaying back, even harmlessly, on a security company's own pages.
+DANGEROUS_SUBSTRINGS = (
+    "script", "eval(", "javascript:", "vbscript:", "onerror",
+    "onload", "onclick", "onmouseover", "expression(", "alert(",
+)
+
 
 def _safe_text(value: str | None, default: str, maximum: int) -> str:
     """
-    Accept normal URL query text while preventing excessively large values.
-
-    Jinja autoescaping provides the HTML-context protection when these values
-    are rendered into templates.
+    Accept only names built from the allowlisted character set above, and
+    without attack-shaped keywords. Anything else (length violation,
+    disallowed characters, blocklisted keyword, empty) falls back to the
+    default rather than being sanitized or echoed.
     """
     if value is None:
         return default
 
     value = value.strip()
 
-    if not value:
+    if not value or len(value) > maximum:
         return default
 
-    if len(value) > maximum:
+    if not SAFE_TEXT_RE.fullmatch(value):
+        return default
+
+    lowered = value.lower()
+    if any(bad in lowered for bad in DANGEROUS_SUBSTRINGS):
+        return default
+
+    return value
+
+
+EMAIL_RE = re.compile(r"^[A-Za-z0-9._%+\-]{1,64}@[A-Za-z0-9.\-]{1,190}\.[A-Za-z]{2,24}$")
+
+# Which domains are allowed to be used via ?email=. Anything outside this
+# list falls back to SITE_EMAIL, no exceptions. Unrestricted email override
+# would let anyone build a link on this domain that points a visitor at an
+# attacker's inbox — a phishing setup, and a bad one for a cybersecurity
+# company's own legal pages to enable. Set as a comma-separated list in
+# Railway, e.g. "roosecure.com,roomobile.app".
+ALLOWED_EMAIL_DOMAINS = {
+    d.strip().lower()
+    for d in os.environ.get("ALLOWED_EMAIL_DOMAINS", "roosecure.com").split(",")
+    if d.strip()
+}
+
+
+def _safe_email(value: str | None, default: str) -> str:
+    if value is None:
+        return default
+
+    value = value.strip()
+
+    if not EMAIL_RE.fullmatch(value):
+        return default
+
+    domain = value.rsplit("@", 1)[1].lower()
+    if domain not in ALLOWED_EMAIL_DOMAINS:
         return default
 
     return value
@@ -106,59 +158,53 @@ HEX_COLOR_RE = re.compile(
 )
 
 
-DEFAULT_THEME = {
-    "bg": "#f5f6f8",
-    "card": "#ffffff",
-    "text": "#0d1b2a",
-    "muted": "#516072",
-    "accent": "#0a4fc4",
-    "border": "#d9dfe7",
+def get_request_theme() -> dict[str, str]:
+    """
+    Read theme colors from the query string, strictly validated, but only
+    include a key when the caller actually passed a valid override.
+
+    This matters for dark mode: static/style.css defines light values on
+    :root and dark values under @media (prefers-color-scheme: dark). This
+    stylesheet loads after that one, so if it always emitted every variable
+    (even defaults), it would permanently win the cascade and silently kill
+    dark mode for every visitor who didn't pass theme colors in the URL.
+    Only overridden colors are emitted here; everything else is left for
+    style.css's own light/dark rules to decide.
+    """
+
+    overrides = {}
+    for key, css_var in THEME_CSS_VARS.items():
+        value = _safe_color_override(request.args.get(key))
+        if value is not None:
+            overrides[css_var] = value
+    return overrides
+
+
+THEME_CSS_VARS = {
+    "bg": "--bg",
+    "card": "--surface",
+    "text": "--ink",
+    "muted": "--muted",
+    "border": "--rule",
+    "accent": "--accent",
 }
 
 
-def _safe_color(value: str | None, default: str) -> str:
-    """
-    Only permit #rgb or #rrggbb.
-
-    Values such as:
-        red
-        rgb(...)
-        url(...)
-        javascript:...
-        #fff; color:red
-        </style><script>...
-    are rejected.
-    """
+def _safe_color_override(value: str | None) -> str | None:
+    """Like _safe_color, but returns None (not a default) when absent/invalid."""
     if value is None:
-        return default
-
+        return None
     value = value.strip()
-
-    if HEX_COLOR_RE.fullmatch(value):
-        return value
-
-    return default
-
-
-def get_request_theme() -> dict[str, str]:
-    """
-    Read theme colors from the query string and strictly validate them.
-    """
-
-    return {
-        key: _safe_color(
-            request.args.get(key),
-            DEFAULT_THEME[key],
-        )
-        for key in DEFAULT_THEME
-    }
+    return value if HEX_COLOR_RE.fullmatch(value) else None
 
 def get_request_site() -> dict:
     """
-    Allow product, app, and company to be customized per URL.
+    Allow product, app, company, and email to be customized per URL.
 
-    Values are still rendered through Jinja autoescaping.
-    Email remains server-controlled.
+    Text fields are still rendered through Jinja autoescaping. Email is
+    additionally restricted to a domain allowlist (see ALLOWED_EMAIL_DOMAINS)
+    — an arbitrary email address can never be set on this domain's pages,
+    only ones on a pre-approved domain.
     """
 
     site = dict(SITE)
@@ -179,6 +225,11 @@ def get_request_site() -> dict:
         request.args.get("company"),
         SITE["company"],
         160,
+    )
+
+    site["email"] = _safe_email(
+        request.args.get("email"),
+        SITE["email"],
     )
 
     return site
@@ -296,18 +347,15 @@ def theme_css():
     in the CSP above.
     """
 
-    theme = get_request_theme()
+    overrides = get_request_theme()
 
-    css = f"""/* ROO Secure dynamic legal-page theme */
-:root {{
-  --bg: {theme["bg"]};
-  --surface: {theme["card"]};
-  --ink: {theme["text"]};
-  --muted: {theme["muted"]};
-  --rule: {theme["border"]};
-  --accent: {theme["accent"]};
-}}
-"""
+    if overrides:
+        decls = "\n".join(f"  {var}: {val};" for var, val in overrides.items())
+        css = f"/* ROO Secure dynamic legal-page theme override */\n:root {{\n{decls}\n}}\n"
+    else:
+        # No valid overrides in the URL — emit nothing so style.css's own
+        # light/dark :root rules apply untouched.
+        css = "/* No theme override — using site defaults (light/dark auto) */\n"
 
     response = Response(
         css,

@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   <title>{% block title %}{{ product }}{% endblock %}</title>
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
-   <link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='style.css',
-      bg=request.args.get('bg', ''),
-      card=request.args.get('card', ''),
-      text=request.args.get('text', ''),
-      muted=request.args.get('muted', ''),
-      accent=request.args.get('accent', ''),
-      border=request.args.get('border', '')
-  ) }}"
->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link
+    rel="stylesheet"
+    href="{{ url_for('theme_css',
+        bg=request.args.get('bg', ''),
+        card=request.args.get('card', ''),
+        text=request.args.get('text', ''),
+        muted=request.args.get('muted', ''),
+        accent=request.args.get('accent', ''),
+        border=request.args.get('border', '')
+    ) }}"
+  >
   <script src="{{ url_for('static', filename='toc.js') }}" defer></script>
 </head>
 <body>
